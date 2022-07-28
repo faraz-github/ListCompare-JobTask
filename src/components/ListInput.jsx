@@ -1,3 +1,4 @@
+import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 
 function ListInput({ setFirstList, setSecondList }) {
@@ -28,26 +29,18 @@ function ListInput({ setFirstList, setSecondList }) {
     }
 
     return (
-        <div style={{ border: "1px solid grey" }}>
-            <center>
-                <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitHandler}>
+            <FormLabel>Select A List To Insert Item</FormLabel>
+            <RadioGroup row>
+                <FormControlLabel value="one" control={<Radio />} label="List A" onChange={(e) => setSelectedList(e.target.value)} />
+                <FormControlLabel value="two" control={<Radio />} label="List B" onChange={(e) => setSelectedList(e.target.value)} />
+            </RadioGroup>
+            <Stack spacing={1}>
+                <TextField fullWidth type="text" label="Type here..." variant="outlined" onChange={(e) => setItem(e.target.value)} value={item} />
+                <Button fullWidth type="submit" variant="contained">Add To List</Button>
+            </Stack>
+        </form>
 
-                    <label htmlFor="one">First List</label>
-                    <input type="radio" name="listSelection" value="one" onChange={(e) => setSelectedList(e.target.value)} />
-                    <label htmlFor="two">Second List</label>
-                    <input type="radio" name="listSelection" value="two" onChange={(e) => setSelectedList(e.target.value)} />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="Input here..."
-                        onChange={(e) => setItem(e.target.value)}
-                        value={item}
-                    />
-                    <br />
-                    <button type="submit">Add To List</button>
-                </form>
-            </center>
-        </div>
     )
 }
 
