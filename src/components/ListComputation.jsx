@@ -1,6 +1,8 @@
-import { Accordion, AccordionSummary, List, ListItem } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useEffect, useState } from "react";
+
+import { Accordion, AccordionSummary, List, ListItem, Typography } from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 function ListComputation({ firstList, secondList }) {
 
@@ -49,11 +51,14 @@ function ListComputation({ firstList, secondList }) {
 
     return (
         <>
-            <Accordion>
+            <Accordion sx={{ fontFamily: "Quicksand" }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    Items Present Only In A
+                    <Typography variant="button">
+                        Items Present Only In A
+                    </Typography>
+
                 </AccordionSummary>
                 <AccordionSummary>
                     {
@@ -71,11 +76,14 @@ function ListComputation({ firstList, secondList }) {
                     }
                 </AccordionSummary>
             </Accordion>
-            <Accordion>
+            <Accordion sx={{ fontFamily: "Quicksand" }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    Items Present Only In B
+                    <Typography variant="button">
+                        Items Present Only In B
+                    </Typography>
+
                 </AccordionSummary>
                 <AccordionSummary>
                     {
@@ -93,11 +101,14 @@ function ListComputation({ firstList, secondList }) {
                     }
                 </AccordionSummary>
             </Accordion>
-            <Accordion>
+            <Accordion sx={{ fontFamily: "Quicksand" }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    Items Present In Both A And B
+                    <Typography variant="button">
+                        Items Present In Both A And B
+                    </Typography>
+
                 </AccordionSummary>
                 <AccordionSummary>
                     {
@@ -115,11 +126,14 @@ function ListComputation({ firstList, secondList }) {
                     }
                 </AccordionSummary>
             </Accordion>
-            <Accordion>
+            <Accordion sx={{ fontFamily: "Quicksand" }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    Items Combining Both A And B Unique
+                    <Typography variant="button">
+                        Items Combining Both A And B Unique
+                    </Typography>
+
                 </AccordionSummary>
                 <AccordionSummary>
                     {

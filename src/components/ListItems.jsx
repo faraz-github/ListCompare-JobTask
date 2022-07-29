@@ -1,13 +1,16 @@
-import { Accordion, AccordionDetails, AccordionSummary, List, ListItem } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, List, ListItem, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function ListItems({ listTitle, listItems }) {
   return (
-    <Accordion>
+    <Accordion sx={{ fontFamily: "Quicksand" }}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
       >
-        {listTitle}
+        <Typography variant="button">
+          {listTitle}
+        </Typography>
+
       </AccordionSummary>
       <AccordionDetails>
         <List dense>

@@ -1,4 +1,4 @@
-import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Stack, TextField } from "@mui/material";
+import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 function ListInput({ setFirstList, setSecondList }) {
@@ -30,14 +30,18 @@ function ListInput({ setFirstList, setSecondList }) {
 
     return (
         <form onSubmit={onSubmitHandler}>
-            <FormLabel>Select A List To Insert Item</FormLabel>
+            <FormLabel>
+                <Typography color={"primary"} variant="subtitle2">
+                    List Input
+                </Typography>
+            </FormLabel>
             <RadioGroup row>
                 <FormControlLabel value="one" control={<Radio />} label="List A" onChange={(e) => setSelectedList(e.target.value)} />
                 <FormControlLabel value="two" control={<Radio />} label="List B" onChange={(e) => setSelectedList(e.target.value)} />
             </RadioGroup>
             <Stack spacing={1}>
                 <TextField fullWidth type="text" label="Type here..." variant="outlined" onChange={(e) => setItem(e.target.value)} value={item} />
-                <Button fullWidth type="submit" variant="contained">Add To List</Button>
+                <Button fullWidth type="submit" disableElevation variant="contained">Add To List</Button>
             </Stack>
         </form>
 
